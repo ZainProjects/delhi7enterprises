@@ -1,0 +1,328 @@
+/* ===================================
+   DELHI 7 ENTERPRISES
+   GLOBAL STYLESHEET
+=================================== */
+
+:root {
+  --primary: #0A3A78;
+  --primary-dark: #072B58;
+
+  --accent: #D4A73B;
+  --accent-dark: #B88B24;
+
+  --secondary: #E46B21;
+
+  --text: #111827;
+  --text-light: #6B7280;
+
+  --bg: #FFFFFF;
+  --bg-light: #F8FAFC;
+
+  --border: #E5E7EB;
+}
+
+/* ===================================
+   GLOBAL RESET
+=================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+.section-label {
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===================================
+   SECTION SPACING
+=================================== */
+
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media(min-width:768px) {
+  .section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .9rem 1.6rem;
+
+  background: var(--primary);
+  color: white;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: .3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .9rem 1.6rem;
+
+  border: 1px solid var(--primary);
+  color: var(--primary);
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: .3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-whatsapp {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background: #15803d;
+}
+
+/* ===================================
+   CARDS
+=================================== */
+
+.card {
+  background: white;
+
+  border-radius: 20px;
+
+  border: 1px solid #f0f0f0;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,.05);
+
+  transition: .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+}
+
+/* ===================================
+   IMAGE HOVER
+=================================== */
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: .5s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.05);
+}
+
+/* ===================================
+   FADE UP ANIMATION
+=================================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================
+   STATS COUNTER
+=================================== */
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+/* ===================================
+   WHATSAPP FLOAT
+=================================== */
+
+.whatsapp-float {
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 999px;
+
+  background: #25D366;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  z-index: 999;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,.7);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 15px rgba(37,211,102,0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0);
+  }
+
+}
+
+/* ===================================
+   BACK TO TOP
+=================================== */
+
+.back-to-top {
+
+  position: fixed;
+
+  right: 20px;
+  bottom: 95px;
+
+  width: 50px;
+  height: 50px;
+
+  background: var(--primary);
+
+  color: white;
+
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .3s ease;
+
+  z-index: 999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--primary-dark);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer-link {
+  transition: .3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+/* ===================================
+   HERO OVERLAY
+=================================== */
+
+.hero-overlay {
+  background:
+  linear-gradient(
+    90deg,
+    rgba(4,17,40,.95) 0%,
+    rgba(4,17,40,.85) 35%,
+    rgba(4,17,40,.2) 100%
+  );
+}
+
+/*trust icons */
+.trust-item {
+  transition: all 0.3s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-4px);
+}
